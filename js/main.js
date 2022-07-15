@@ -1,9 +1,8 @@
 let container = document.getElementById('container');
-let innerTime = document.getElementById('timer');
-let resultBox = document.getElementById('result');
+let time = document.getElementById('timer');
+let result = document.getElementById('result');
 let randomArray = [];
 let targetArray = [];
-
 
 randomArrayGenerator(container, randomArray);
 console.log(randomArray);
@@ -11,14 +10,14 @@ console.log(randomArray);
 let counter = 0;
 let timer = setInterval(
     function() {
-        innerTime.innerHTML = counter;
+        time.innerHTML = counter;
         counter++;
         if (counter === 31) {
             container.classList.add('hidden');
         } else if (counter === 32) {
             counter = 0;
             clearInterval(timer);
-            innerTime.innerHTML = '';
+            timer.innerHTML = '';
             numberRequest();
             const comparisonArray = randomArray.filter(number => {
                 if (targetArray.includes(number)) {
@@ -28,9 +27,9 @@ let timer = setInterval(
             });
 
             if (comparisonArray.lenght == 0) {
-                resultBox.innerHTML = "Non sei riuscito a ricordarti nessun numero. Prova ancora!";  
+                result.innerHTML = "Non sei riuscito a ricordarti nessun numero. Prova ancora!";  
             } else {
-                resultBox.innerHTML = `I numeri che sei riuscito a ricordarti sono: <br>${comparisonArray}`;
+                result.innerHTML = `I numeri che sei riuscito a ricordarti sono: <br>${comparisonArray}`;
             }
         }
     }, 1000);
