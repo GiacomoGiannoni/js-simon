@@ -5,13 +5,47 @@
 }
 
 html {
-    background-color: #ebeffd;
+    background-color: cyan;
     font-family: sans-serif;
 }
 
-.container {
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+section {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    margin: 200px auto;
+    width: 80%;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+}
+
+.box {
+    height: 100px;
+    width: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: purple;
+    color: white;
+}
+
+#result {
+    background-color: white;
+    color: black;
+}
+
+#timer {
+    background-color: red;
+    color: yellow;
+}
+
+.hidden {
+    visibility: hidden;
 }
